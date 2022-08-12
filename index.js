@@ -34,7 +34,7 @@ app.post('/auth/login', async (req, res)=>{
             })
         }
 
-        const token = jwt.sign({
+        const token=jwt.sign({
             _id: user._id,
         }, 'secret007',
         {
@@ -42,7 +42,6 @@ app.post('/auth/login', async (req, res)=>{
         },
         )
         const { passwordHash, ...userData} = user._doc
-  
     res.json({
         ...userData,
         token
